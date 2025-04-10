@@ -1,0 +1,9 @@
+Pre processing datasets:
+
+No duplicates were found, the data itself had no missing values and no changes needed to be made 
+
+Exploring the dataset:
+
+I used python functions to search the dataset for information (Which took the function extremely long to process, resulting in me finding a lot of interesting facts the female to male ratio is 1.16006/1 aswell as that the average annual premium is 30,524.64.
+
+In general the information is kind of staggering especially with the annual premium being such a large number.
