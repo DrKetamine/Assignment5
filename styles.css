@@ -1,0 +1,30 @@
+table {
+    border-radius: 10px;
+    width: 100%;
+}
+
+thead {
+    background-color: #31363F;
+    color: #EEEEEE;
+    height: 40px;
+    border-radius: 10px;
+}
+
+th {
+    border-radius: 5px;
+    min-width: 100px;
+}
+
+tr {
+    height: 40px;
+}
+
+td {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    text-align: center;
+}
+
+tbody {
+    padding: 10px;
+}
