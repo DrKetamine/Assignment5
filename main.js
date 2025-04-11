@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             yKey: "_____"
         },
         "adrians.html": {
-            path: "/datasetsProcessed/_______.json",
-            xKey: "_____",
-            yKey: "_____"
+            path: "/datasetsProcessed/World_Happiness_Report_2019_processed.json",
+            xKey: "Country or region",
+            yKey: "Score"
         }
     };
     const config = pageToDataset[page];
