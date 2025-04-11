@@ -1,7 +1,36 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM is fully loaded");
 
-    fetch('datasetsProcessed/CondomSet.json')
+    const page = window.location.pathname.split("/").pop();
+    const pageToDataset = {
+        "patriks.html": {
+            path: "/datasetsProcessed/CondomSet.json",
+            xKey: "Year",
+            yKey: "Total Sales (Million Units)"
+        },
+        "marks.html": {
+            path: "/datasetsProcessed/____.json",
+            xKey: "_____",
+            yKey: "_____"
+        },
+        "janis.html": {
+            path: "/datasetsProcessed/______.json",
+            xKey: "_____",
+            yKey: "_____"
+        },
+        "arturs.html": {
+            path: "/datasetsProcessed/______.json",
+            xKey: "_____",
+            yKey: "_____"
+        },
+        "adrians.html": {
+            path: "/datasetsProcessed/_______.json",
+            xKey: "_____",
+            yKey: "_____"
+        }
+    };
+    const config = pageToDataset[page];
+    fetch(config.path)
     .then(response => response.json())
     .then(data => {
         const tableBody = document.querySelector('#data-table tbody');
@@ -15,17 +44,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
             tableBody.appendChild(row);
         });
 
-        const years = data.map(item => item.Year);
-        const totalSales = data.map(item => item['Total Sales (Million Units)']);
+        const xValues = data.map(item => item[config.xKey]);
+        const yValues = data.map(item => item[config.yKey]);
+        
         const ctx = document.getElementById('myChart');
         if (ctx) {
             new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: years,
+                    labels: xValues,
                     datasets: [{
-                        label: 'Total Sales (Million Units)',
-                        data: totalSales,
+                        label: config.yKey,
+                        data: yValues,
                         borderWidth: 2
                     }]
                 },
@@ -37,7 +67,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     }
                 }
             });
-        }
+        }        
     })
     .catch(error => console.error('Error loading the data:', error));
 });
