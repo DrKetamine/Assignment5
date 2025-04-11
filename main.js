@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
             yKey: "_____"
         },
         "arturs.html": {
-            path: "/datasetsProcessed/______.json",
-            xKey: "_____",
-            yKey: "_____"
-        },
-        "adrians.html": {
             path: "/datasetsProcessed/World_Happiness_Report_2019_processed.json",
             xKey: "Country or region",
             yKey: "Score"
+        },
+        "adrians.html": {
+            ath: "/datasetsProcessed/______.json",
+            xKey: "_____",
+            yKey: "_____"
         }
     };
     const config = pageToDataset[page];
