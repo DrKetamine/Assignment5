@@ -1,0 +1,28 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+
+proxies:
+  - name: "MySocks5"
+    type: socks5
+    server: isp.oxylabs.io
+    port: 8005
+    username: patrik_FQi5h
+    password: ProxyPatriks671=
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - "MySocks5"
+      - DIRECT
+
+rules:
+  - "MATCH,Proxy"
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver:
+    - 8.8.8.8
+  listen: 0.0.0.0:53
